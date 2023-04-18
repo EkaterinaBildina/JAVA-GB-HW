@@ -3,12 +3,21 @@
 
 package lesson2;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        countOneTask2();
-        printArrayTask3();
+        //countOneTask2();
+        //printArrayTask3();
+        // task17041();
+        // task17042();
+
+        //System.out.println(task17043());
+        task17044();
     }
 
 
@@ -67,6 +76,93 @@ public class Main {
 
     }
 
+
+    public static void task17041() {
+        //Дано четное число N (>0) и символы c1 и c2.
+        //Написать метод, который вернет строку длины N,
+        // которая состоит из чередующихся символов c1 и c2, начиная с c1.
+
+        int N = 9;
+        char symbc1 = 'A';
+        char symbc2 = 'B';
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < N; i++) {
+            if (i % 2 == 0) {
+                result.append(symbc1);
+            } else {
+                result.append(symbc2);
+            }
+
+        }
+        System.out.println(result.toString());
+
+    }
+
+    public static void task17042() {
+        //Напишите метод, который сжимает строку.
+        //Пример: вход aaaabbbcdd.
+        String input = "aaaabbbcdd" + " ";
+
+        char[] array = input.toCharArray();
+        StringBuilder result = new StringBuilder();
+
+        int count = 1;
+        //System.out.println(Arrays.toString(array));
+        for (int i = 0; i < array.length - 1; i++) {
+            char check = array[i];
+
+            if (check == array[i + 1]) {
+                count ++;
+            } else {
+                if (count == 1) {
+                    result.append(check);
+                } else {
+                    result.append(check).append(count);
+                }
+                count = 1;
+            }
+
+        }
+        System.out.println(result);
+    }
+
+
+    public static boolean task17043() {
+        // Напишите метод, который принимает на вход строку (String)
+        // и определяет является ли строка палиндромом (возвращает boolean значение).
+        Scanner input = new Scanner(System.in);
+        System.out.println("Введите строку: ");
+        String polindrom = input.nextLine();
+
+        char[] arrayP = polindrom.toCharArray();
+        System.out.println(Arrays.toString(arrayP));
+
+        for (int i = 0; i < arrayP.length / 2; i++) {
+            if (arrayP[i] != arrayP[arrayP.length - i - 1]) {
+                return false;
+            }
+
+        }
+        return true;
+
+    }
+
+    public static void task17044() throws IOException {
+        //Напишите метод, который составит строку,
+        // состоящую из 100 повторений слова TEST и метод,
+        // который запишет эту строку в простой текстовый файл,
+        // обработайте исключения.
+
+            StringBuilder result = new StringBuilder();
+            result.append("TEST".repeat(100));
+            System.out.println(result);
+
+            File output = new File("Text.txt");
+            FileWriter writer = new FileWriter(output);
+
+
+    }
 
 
 }
