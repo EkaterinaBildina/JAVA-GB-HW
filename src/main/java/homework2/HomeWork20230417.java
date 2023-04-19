@@ -1,16 +1,13 @@
 package homework2;
 
 import java.util.Arrays;
-import java.util.Objects;
-
-
 
 public class HomeWork20230417 {
-    public static void main(String[] args) {
+    public static void run(String[] args) {
         task01();
     }
 
-    public static StringBuilder task01() {
+    public static void task01() {
         // 1. Дана строка sql-запроса "select * from students where ".
         // Сформируйте часть WHERE этого запроса, используя StringBuilder.
         // Данные для фильтрации приведены ниже в виде json-строки.
@@ -23,46 +20,31 @@ public class HomeWork20230417 {
         // Параметры для фильтрации: {"name:null", "country:null", "city:null", "age:null"}
         // Результат: SELECT * FROM USER;
 
-        String[] Students = {"name:Ivanov", "country:Russia", "city:Moscow", "age:null"};
-        //String[] Students = {"name:null", "country:null", "city:null", "age:null"};
-        System.out.println(Arrays.toString(Students));
+        String[] sqlRequest = {"name:Ivanov", "country:Russia", "city:Moscow", "age:null"};
+        System.out.println(Arrays.toString(sqlRequest));
 
-        String[] name = Students[0].split(":");
-        String[] country = Students[1].split(":");
-        String[] city = Students[2].split(":");
-        String[] age = Students[3].split(":");
-
-        String skipElem = "null";
         StringBuilder selectWhere = new StringBuilder();
 
-        if (!Objects.equals(name[1], skipElem)) {
-            selectWhere.append(" " + Students[0]);
+        String[] name = sqlRequest[0].split();
+        System.out.println(Arrays.toString(name));
+
+        String[] country = sqlRequest[1].split();
+        System.out.println(Arrays.toString(country));
+
+        String[] city = sqlRequest[2].split();
+        System.out.println(Arrays.toString(city));
+
+        String[] age = sqlRequest[3].split();
+        System.out.println(Arrays.toString(age));
+
+            //if (name[1] == "Ivanov") {
+             //   selectWhere.append(name[1]);
+            }
         }
-        if (!Objects.equals(country[1], skipElem)) {
-            selectWhere.append(" " + Students[1]);
-        }
-        if (!Objects.equals(city[1], skipElem)) {
-            selectWhere.append(" " + Students[2]);
-        }
-        if (!Objects.equals(age[1], skipElem)) {
-            selectWhere.append(" " + Students[3]);
-        }
-        System.out.println("SELECT * FROM USER " + selectWhere);
-        return selectWhere;
+        //System.out.println(selectWhere);
+
+
     }
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
