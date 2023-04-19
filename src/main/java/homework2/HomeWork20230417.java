@@ -3,6 +3,8 @@ package homework2;
 import java.util.Arrays;
 import java.util.Objects;
 
+
+
 public class HomeWork20230417 {
     public static void main(String[] args) {
         task01();
@@ -51,6 +53,11 @@ public class HomeWork20230417 {
 
 
 }
+
+
+
+
+
 
 
 
