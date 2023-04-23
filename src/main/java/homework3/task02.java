@@ -33,18 +33,18 @@ public class task02 {
 
         for (int i = 0; i < Size; i++) {
             System.out.printf("Введите Жанр книги: ");
-            String inputBookName = iScanner.nextLine();
+            String inputGenre = iScanner.nextLine();
 
             ArrayList<String> genreList = new ArrayList<>();
-            genreList.add(inputBookName);
+            genreList.add(inputGenre);
 
             System.out.printf("Введите количество книг в жанре: ");
             int bookQty = Integer.parseInt(iScanner.nextLine());
 
             for (int j = 0; j < bookQty; j++) {
                     System.out.printf("Введите название книги: ");
-                    String inputGenre = iScanner.nextLine();
-                    genreList.add(inputGenre);
+                    String inputBookName = iScanner.nextLine();
+                    genreList.add(inputBookName);
                }
 
             //System.out.println(genreList);
