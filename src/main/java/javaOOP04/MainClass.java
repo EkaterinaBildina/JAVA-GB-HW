@@ -29,14 +29,14 @@ public class MainClass {
         System.out.println(teamMixedOnline);
         System.out.println("----------teamArchers:------------");
         System.out.println(teamArchers);
-        System.out.println("-----------teamInfantryman: -----------");
+        System.out.println("-----------teamInfantryman:-----------");
         System.out.println(teamInfantryman);
 
         Infantryman pl1 = new Infantryman("John", 150, new Axe(), new HyleanShield());
         Archer pl2 = new Archer("Jimmy", 100, new CrossBow(), new ShellShield());
         Battle battle1 = new Battle(pl1, pl2);
 
-        System.out.println("----------battle1.fight: ------------");
+        System.out.println("----------battle1.fight:------------");
         battle1.fight();
 
     }
