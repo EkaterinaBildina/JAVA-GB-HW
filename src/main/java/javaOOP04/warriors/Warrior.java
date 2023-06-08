@@ -5,7 +5,7 @@ import javaOOP04.wepons.Weapon;
 
 import java.util.Random;
 
-public abstract class Warrior<W extends Weapon,S extends Shield> {
+public abstract class Warrior<W extends Weapon, S extends Shield> {
 
     private String name;
     private int healthPoint;
@@ -55,21 +55,21 @@ public abstract class Warrior<W extends Weapon,S extends Shield> {
 
     public int hit() {
         Random rnd = new Random();
-        return rnd.nextInt(0,weapon.damage() + 1);
+        return rnd.nextInt(0, weapon.damage() + 1);
     }
 
     public void reduceHealth(int damage) {
         int protection = 0;
-        if (shield != null){
+        if (shield != null) {
             protection = shield.getProtection();
         }
-       damage -= protection;
+        damage -= protection;
         if (damage < 0) {
             damage = 0;
-        }
-        healthPoint -= protection;
-        if (healthPoint < 0){
-            healthPoint = 0;
+            healthPoint -= protection;
+            if (healthPoint < 0) {
+                healthPoint = 0;
+            }
         }
     }
 
